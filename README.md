@@ -1,6 +1,6 @@
-# Enable Zigbee Dongles Like Conbee / Sonoff for DSM7 
+# Enable Zigbee Dongles for DSM7 
 
-This document helps with the setup of a startup script for DSM 7 to detect and load Zigbee Dongles prior to loading Docker Containers.
+This document helps with the setup of a startup script for DSM 7 to detect and load Zigbee Dongles like Conbee or Sonoff prior to loading Docker Containers.
 
 ## Intro
 
@@ -70,7 +70,7 @@ sudo systemctl enable pkg-zigbeedongle.service
 If you now reboot, this script will run before docker and the container will find the old ACM tty.
 
 
-##  Startup script
+##  The Startup script
 
 ```bash
 [Unit]
