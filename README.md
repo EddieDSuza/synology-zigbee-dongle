@@ -23,12 +23,21 @@ Go to the below directory
 cd /usr/local/lib/systemd/system
 ```
 
-You should see the following:
+Provide elevated access to the file 
+
+```bash
+sudo chmod 777 pkg-zigbeedongle.service
+```
+
+Test The Elevated access
 
 ```bash
 ls -l /usr/local/lib/systemd/system/pkg-conbee.service 
+```
 
--rw-r--r-- 1 root root 341 Jul 22 13:39 /usr/local/lib/systemd/system/pkg-conbee.service
+You will see the below output
+```bash
+-rwxrwxrwx 1 root root 340 Nov  6 19:43 /usr/local/lib/systemd/system/pkg-zigbeedongle.service
 ```
 
 ### Test the script
