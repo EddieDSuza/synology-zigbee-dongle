@@ -45,7 +45,7 @@ You will see the below output
 Run the following:
 
 ```bash
-sudo systemctl start pkg-conbee.service
+sudo systemctl start pkg-zigbeedongle.service
 ```
 
 This will run the script. Now you can check modules in the kernel with `lsmod` as
@@ -53,8 +53,8 @@ This will run the script. Now you can check modules in the kernel with `lsmod` a
 ```bash
 lsmod |grep cdc_acm
 
-cdc_acm                18383  2 
-usbcore               201223  12 etxhci_hcd,usblp,uhci_hcd,usb_storage,usbserial,ehci_hcd,ehci_pci,usbhid,ftdi_sio,cdc_acm,xhci_hcd,xhci_pci
+cdc_acm                18255  2 
+usbcore               202075  12 etxhci_hcd,usblp,uhci_hcd,usb_storage,usbserial,ehci_hcd,ehci_pci,usbhid,ftdi_sio,cdc_acm,xhci_hcd,xhci_pci
 ```
 
 This means modules are loaded.
@@ -64,7 +64,7 @@ This means modules are loaded.
 The script must run at startup, so you need to tell `systemd` to do it
 
 ```bash
-systemctl enable pkg-conbee.service
+sudo systemctl enable pkg-zigbeedongle.service
 ```
 
 If you now reboot, this script will run before docker and the container will find the old ACM tty.
