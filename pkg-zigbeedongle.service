@@ -1,5 +1,5 @@
 [Unit]
-Description=ConBee Module loader
+Description=Zigbee Module loader
 Requires=pkg-volume.target
 Wants=
 Requisite=
