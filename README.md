@@ -32,7 +32,7 @@ sudo chmod 777 pkg-zigbeedongle.service
 Test The Elevated access
 
 ```bash
-ls -l /usr/local/lib/systemd/system/pkg-conbee.service 
+ls -l /usr/local/lib/systemd/system/pkg-zigbeedongle.service 
 ```
 
 You will see the below output
