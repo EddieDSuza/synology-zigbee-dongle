@@ -10,12 +10,12 @@ DSM7 uses `systemd` for services statup operations. Systemd allows additional sc
 
 ## Usage
 
-### Prepare the script
+### If you are using the Docker App
 
-Login via SSH into you synology. Copy the `pkg-zigbeedongle.service` startup script into `/usr/local/lib/systemd/system` by using the below command 
+Login via SSH into you synology. Copy the `pkg-zigbeedocker.service` startup script into `/usr/local/lib/systemd/system` by using the below command 
 
 ```bash
-sudo wget https://raw.githubusercontent.com/EddieDSuza/synology-zigbee-dongle/main/pkg-zigbeedongle.service -P /usr/local/lib/systemd/system
+sudo wget https://raw.githubusercontent.com/EddieDSuza/synology-zigbee-dongle/main/pkg-zigbeedocker.service -P /usr/local/lib/systemd/system
 ```
 Go to the below directory
 
@@ -26,26 +26,57 @@ cd /usr/local/lib/systemd/system
 Provide elevated access to the file 
 
 ```bash
-sudo chmod 777 pkg-zigbeedongle.service
+sudo chmod 777 pkg-zigbeedocker.service
 ```
 
 Test The Elevated access
 
 ```bash
-ls -l /usr/local/lib/systemd/system/pkg-zigbeedongle.service 
+ls -l /usr/local/lib/systemd/system/pkg-zigbeedocker.service
 ```
 
 You will see the below output
 ```bash
--rwxrwxrwx 1 root root 340 Nov  6 19:43 /usr/local/lib/systemd/system/pkg-zigbeedongle.service
+-rwxrwxrwx 1 root root 340 Nov  6 19:43 /usr/local/lib/systemd/system/pkg-zigbeedocker.service
 ```
+
+### If you are using the Container Manager App
+
+Login via SSH into you synology. Copy the `pkg-zigbeecontainer.service` startup script into `/usr/local/lib/systemd/system` by using the below command 
+
+```bash
+sudo wget https://raw.githubusercontent.com/EddieDSuza/synology-zigbee-dongle/main/pkg-zigbeedocker.service -P /usr/local/lib/systemd/system
+```
+Go to the below directory
+
+```bash
+cd /usr/local/lib/systemd/system
+```
+
+Provide elevated access to the file 
+
+```bash
+sudo chmod 777 pkg-zigbeedocker.service
+```
+
+Test The Elevated access
+
+```bash
+ls -l /usr/local/lib/systemd/system/pkg-zigbeecontainer.service
+```
+
+You will see the below output
+```bash
+-rwxrwxrwx 1 root root 340 Nov  6 19:43 /usr/local/lib/systemd/system/pkg-zigbeecontainer.service
+```
+
 
 ### Test the script
 
 Run the following:
 
 ```bash
-sudo systemctl start pkg-zigbeedongle.service
+sudo systemctl start pkg-zigbeecontainer.service
 ```
 
 This will run the script. Now you can check modules in the kernel with `lsmod` as
@@ -64,7 +95,7 @@ This means modules are loaded.
 The script must run at startup, so you need to tell `systemd` to do it
 
 ```bash
-sudo systemctl enable pkg-zigbeedongle.service
+sudo systemctl enable pkg-zigbeecontainer.service
 ```
 
 If you now reboot, this script will run before docker and the container will find the old ACM tty.
