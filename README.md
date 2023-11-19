@@ -70,7 +70,7 @@ sudo systemctl enable pkg-zigbeedongle.service
 If you now reboot, this script will run before docker and the container will find the old ACM tty.
 
 
-##  The Startup script
+##  The Startup script using Docker
 
 ```bash
 [Unit]
@@ -84,6 +84,29 @@ OnFailure=
 
 [Install]
 WantedBy=pkg-Docker-dockerd.service
+
+[Service]
+Type=simple
+ExecStart=/bin/bash -c "modprobe usbserial && modprobe ftdi_sio && modprobe cdc-acm" 
+TimeoutStartSec=3600
+TimeoutStopSec=3600
+RemainAfterExit=true
+```
+
+##  The Startup script using Container Manager
+
+```bash
+[Unit]
+Description=ConBee Module loader
+Requires=pkg-volume.target
+Wants=
+Requisite=
+After=
+IgnoreOnIsolate=no
+OnFailure=
+
+[Install]
+WantedBy=pkg-ContainerManager-dockerd.service
 
 [Service]
 Type=simple
