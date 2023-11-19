@@ -45,7 +45,7 @@ You will see the below output
 Login via SSH into you synology. Copy the `pkg-zigbeecontainer.service` startup script into `/usr/local/lib/systemd/system` by using the below command 
 
 ```bash
-sudo wget https://raw.githubusercontent.com/EddieDSuza/synology-zigbee-dongle/main/pkg-zigbeedocker.service -P /usr/local/lib/systemd/system
+sudo wget https://raw.githubusercontent.com/EddieDSuza/synology-zigbee-dongle/main/pkg-zigbeecontainer.service -P /usr/local/lib/systemd/system
 ```
 Go to the below directory
 
