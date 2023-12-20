@@ -56,7 +56,7 @@ cd /usr/local/lib/systemd/system
 Provide elevated access to the file 
 
 ```bash
-sudo chmod 777 pkg-zigbeedocker.service
+sudo chmod 777 pkg-zigbeecontainer.service
 ```
 
 Test The Elevated access
