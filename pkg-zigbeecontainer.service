@@ -12,7 +12,7 @@ WantedBy=pkg-ContainerManager-dockerd.service
 
 [Service]
 Type=simple
-ExecStart=/bin/bash -c "modprobe usbserial && modprobe ftdi_sio && modprobe cdc-acm" 
+ExecStart=/bin/bash -c "modprobe usbserial && modprobe ftdi_sio && modprobe cdc-acm && modprobe ch341.ko" 
 TimeoutStartSec=3600
 TimeoutStopSec=3600
 RemainAfterExit=true
